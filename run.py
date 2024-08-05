@@ -5,6 +5,13 @@ cur_dir = os.path.abspath(os.path.curdir)
 # os.system("pause")
 
 home = os.path.expanduser('~')
+
+try:
+    os.remove(os.path.join(home, '.spacemacs'))
+    os.remove(os.path.join(home, '.spacemacs.env'))
+except:
+    pass
+
 home = home.replace("\\", "\\\\")
 
 run_reg = os.path.join(cur_dir, 'run.reg')
