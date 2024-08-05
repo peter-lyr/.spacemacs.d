@@ -39,12 +39,12 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     ;; better-defaults
+     better-defaults
      emacs-lisp
      git
      helm
-     ;; lsp
-     ;; markdown
+     lsp
+     markdown
      multiple-cursors
      org
      ;; (shell :variables
@@ -586,29 +586,29 @@ before packages are loaded."
   ;; hack nfm字体
   (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
 
-  ; Org文件以指定的目录深度打开 startup:show2levels
-  ; #+STARTUP: overview
-  ; https://emacs-china.org/t/org-startup-show2levels/16499
+  ;; Org文件以指定的目录深度打开 startup:show2levels
+  ;; #+STARTUP: overview
+  ;; https://emacs-china.org/t/org-startup-show2levels/16499
   (setq org-startup-folded 'show2levels)
 
-  ; #+STARTUP: indent
-  ; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
+  ;; #+STARTUP: indent
+  ;; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
   (setq org-startup-indented t)
 
-  ; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
-  ; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
+  ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
+  ;; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
   (setq org-todo-keywords
         '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
 
-  ; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
-  ; #+STARTUP: logdone
+  ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
+  ;; #+STARTUP: logdone
   (setq org-log-done 'time)
 
-  ; M-RET不要切割当前行
+  ;; M-RET不要切割当前行
   (setq org-M-RET-may-split-line nil)
 
-  ; 关于org-agenda-files不能奏效的问题
-  ; https://emacs-china.org/t/org-agenda-files/25932
+  ;; 关于org-agenda-files不能奏效的问题
+  ;; https://emacs-china.org/t/org-agenda-files/25932
   (setq org-agenda-files (list "~/depei/repos/org/"))
 
   )
