@@ -4,7 +4,7 @@ cur_dir = os.path.abspath(os.path.curdir)
 # print(cur_dir)
 # os.system("pause")
 
-home = os.getenv("home")
+home = os.path.expanduser('~')
 home = home.replace("\\", "\\\\")
 
 run_reg = os.path.join(cur_dir, 'run.reg')
