@@ -611,6 +611,9 @@ before packages are loaded."
   ;; https://emacs-china.org/t/org-agenda-files/25932
   (setq org-agenda-files (list "~/depei/repos/org/"))
 
+  ;; 标签紧凑点
+  (setq org-tags-column 0)
+
   )
 
 
