@@ -629,6 +629,10 @@ before packages are loaded."
     (save-buffers-kill-terminal))
   (global-set-key (kbd "C-x C-r") 'my-restart-emacs)
 
+  ;; https://www.bilibili.com/read/cv13666442/
+  ;; (add-hook 'focus-out-hook 'save-buffer); save current buffer
+  (add-hook 'focus-out-hook (lambda () (save-some-buffers t))); save all opened buffers
+
   )
 
 
