@@ -614,6 +614,11 @@ before packages are loaded."
   ;; 标签紧凑点
   (setq org-tags-column 0)
 
+  ;; 自动补全括号
+  (electric-pair-mode t)
+  ;; 编程模式下，光标在括号上时高亮另一个括号
+  (add-hook 'prog-mode-hook #'show-paren-mode)
+
   ;; 重启emacs :测试:
   ;; https://github.com/iqbalansari/restart-emacs
   (use-package restart-emacs
