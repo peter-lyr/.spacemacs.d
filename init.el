@@ -614,6 +614,16 @@ before packages are loaded."
   ;; 标签紧凑点
   (setq org-tags-column 0)
 
+  ;; 重启emacs :测试:
+  ;; https://github.com/iqbalansari/restart-emacs
+  (use-package restart-emacs
+    :ensure t)
+  (defun my-restart-emacs()
+    (interactive)
+    (restart-emacs-start-new-emacs)
+    (save-buffers-kill-terminal))
+  (global-set-key (kbd "C-x C-r") 'my-restart-emacs)
+
   )
 
 
