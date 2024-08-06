@@ -650,6 +650,12 @@ before packages are loaded."
   ;; (add-hook 'focus-out-hook 'save-buffer); save current buffer
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t))); save all opened buffers
 
+  ;; 刷新当前buffer
+  (defun my-refresh-cur-buffer()
+    (interactive)
+    (revert-buffer :ignore-auto :noconfirm))
+  (global-set-key (kbd "C-c C-r") 'my-refresh-cur-buffer)
+
   )
 
 
