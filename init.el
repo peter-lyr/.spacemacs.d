@@ -590,6 +590,19 @@ before packages are loaded."
   ;; #+STARTUP: overview
   ;; https://emacs-china.org/t/org-startup-show2levels/16499
   (setq org-startup-folded 'show2levels)
+  ;; 按键映射
+  (defun my-show2levels()
+    (interactive)
+    (org-shifttab 2))
+  (global-set-key (kbd "C-c C-SPC C-SPC") 'my-show2levels)
+  (defun my-show3levels()
+    (interactive)
+    (org-shifttab 3))
+  (global-set-key (kbd "C-c C-SPC C-c") 'my-show3levels)
+  (defun my-show4levels()
+    (interactive)
+    (org-shifttab 4))
+  (global-set-key (kbd "C-c C-SPC C-d") 'my-show4levels)
 
   ;; #+STARTUP: indent
   ;; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
