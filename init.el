@@ -591,6 +591,10 @@ before packages are loaded."
   ;; https://emacs-china.org/t/org-startup-show2levels/16499
   (setq org-startup-folded 'show2levels)
   ;; 按键映射
+  (defun my-show1levels()
+    (interactive)
+    (org-shifttab 1))
+  (global-set-key (kbd "C-c C-SPC C-v") 'my-show1levels)
   (defun my-show2levels()
     (interactive)
     (org-shifttab 2))
