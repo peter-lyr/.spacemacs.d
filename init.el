@@ -64,7 +64,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(avy)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -584,8 +584,8 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ; ;; hack nfm字体
-  ; (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
+                                        ; ;; hack nfm字体
+                                        ; (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
 
   ;; Org文件以指定的目录深度打开 startup:show2levels
   ;; #+STARTUP: overview
@@ -639,19 +639,19 @@ before packages are loaded."
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
-  ; (setq org-todo-keywords
-  ;       '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
+                                        ; (setq org-todo-keywords
+                                        ;       '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
   (setq org-todo-keywords '((sequence
-                              "GATHER(g)"
-                              "NEXT(n)"
-                              "LATER(l)"
-                              "WAIT(w)"
-                              "MAYBE(m)"
-                              "|"
-                              "DONE(d)"
-                              "CANCELLED(c)"
-                              "ARCHIVE(a)"
-                              )))
+                             "GATHER(g)"
+                             "NEXT(n)"
+                             "LATER(l)"
+                             "WAIT(w)"
+                             "MAYBE(m)"
+                             "|"
+                             "DONE(d)"
+                             "CANCELLED(c)"
+                             "ARCHIVE(a)"
+                             )))
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+STARTUP: logdone
@@ -694,11 +694,14 @@ before packages are loaded."
 
   ;; DONE 表格对齐，增加上电时长
   (use-package valign
-               :ensure t
-               :config
-               (setq valign-fancy-bar t)
-               (add-hook 'org-mode-hook #'valign-mode)
-               )
+    :ensure t
+    :config
+    (setq valign-fancy-bar t)
+    (add-hook 'org-mode-hook #'valign-mode)
+    )
+
+  ;; avy快速跳转
+  (global-set-key (kbd "SPC s SPC") 'avy-goto-char)
 
   )
 
