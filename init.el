@@ -607,6 +607,18 @@ before packages are loaded."
     (interactive)
     (org-shifttab 4))
   (global-set-key (kbd "C-c C-SPC C-d") 'my-show4levels)
+  (defun my-show5levels()
+    (interactive)
+    (org-shifttab 5))
+  (global-set-key (kbd "C-c C-SPC C-e") 'my-show5levels)
+  (defun my-show6levels()
+    (interactive)
+    (org-shifttab 6))
+  (global-set-key (kbd "C-c C-SPC C-f") 'my-show6levels)
+  (defun my-show7levels()
+    (interactive)
+    (org-shifttab 7))
+  (global-set-key (kbd "C-c C-SPC C-g") 'my-show7levels)
 
   ;; #+STARTUP: indent
   ;; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
