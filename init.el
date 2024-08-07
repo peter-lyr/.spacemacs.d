@@ -689,7 +689,7 @@ before packages are loaded."
   ;; 刷新当前buffer
   (defun my-refresh-cur-buffer()
     (interactive)
-    (revert-buffer :ignore-auto :noconfirm))
+    (revert-buffer))
   (global-set-key (kbd "C-c C-r") 'my-refresh-cur-buffer)
 
   ;; DONE 表格对齐，增加上电时长
