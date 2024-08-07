@@ -669,6 +669,14 @@ before packages are loaded."
     (revert-buffer :ignore-auto :noconfirm))
   (global-set-key (kbd "C-c C-r") 'my-refresh-cur-buffer)
 
+  ;; TODO 表格对齐，增加上电时长
+  (use-package valign
+               :ensure t
+               :config
+               (setq valign-fancy-bar t)
+               (add-hook 'org-mode-hook #'valign-mode)
+               )
+
   )
 
 
