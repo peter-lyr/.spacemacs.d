@@ -46,7 +46,7 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      multiple-cursors
-     org
+     (org :variables org-enable-valign t) ; 解决上删除一次再安装一次的问题
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -669,7 +669,7 @@ before packages are loaded."
     (revert-buffer :ignore-auto :noconfirm))
   (global-set-key (kbd "C-c C-r") 'my-refresh-cur-buffer)
 
-  ;; TODO 表格对齐，增加上电时长
+  ;; DONE 表格对齐，增加上电时长
   (use-package valign
                :ensure t
                :config
