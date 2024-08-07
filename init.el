@@ -258,7 +258,8 @@ It should only modify the values of Spacemacs settings."
    ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Source Code Pro"
+   ;; hack nfm字体
+   dotspacemacs-default-font '("Hack NFM"
                                :size 10.0
                                :weight normal
                                :width normal)
@@ -583,8 +584,8 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;; hack nfm字体
-  (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
+  ; ;; hack nfm字体
+  ; (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
 
   ;; Org文件以指定的目录深度打开 startup:show2levels
   ;; #+STARTUP: overview
