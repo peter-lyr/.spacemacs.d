@@ -584,8 +584,8 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-                                        ; ;; hack nfm字体
-                                        ; (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
+  ;; hack nfm字体
+  ;; (set-frame-font "-outline-Hack NFM-regular-normal-normal-mono-*-*-*-*-c-*-iso10646-1")
 
   ;; Org文件以指定的目录深度打开 startup:show2levels
   ;; #+STARTUP: overview
@@ -686,6 +686,12 @@ before packages are loaded."
   ;; (add-hook 'focus-out-hook 'save-buffer); save current buffer
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t))); save all opened buffers
 
+  (defun my-kill-home-buffer()
+    (interactive)
+    ; (kill-buffer "*spacemacs*")
+    (find-file "~/depei/repos/org/init.org"))
+  (run-at-time "1 sec" nil 'my-kill-home-buffer)
+
   ;; 刷新当前buffer
   (defun my-refresh-cur-buffer()
     (interactive)
@@ -701,7 +707,7 @@ before packages are loaded."
     )
 
   ;; avy快速跳转
-  (global-set-key (kbd "SPC s SPC") 'avy-goto-char)
+  (global-set-key (kbd "SPC j j") 'avy-goto-char)
 
   )
 
