@@ -625,19 +625,19 @@ before packages are loaded."
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
-                                        ; (setq org-todo-keywords
-                                        ;       '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
+  ;; (setq org-todo-keywords
+  ;;       '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
   (setq org-todo-keywords '((sequence
-                             "GATHER(g)"
-                             "NEXT(n)"
-                             "LATER(l)"
-                             "WAIT(w)"
-                             "MAYBE(m)"
-                             "|"
-                             "DONE(d)"
-                             "CANCELLED(c)"
-                             "ARCHIVE(a)"
-                             )))
+                              "GATHER(g@)"
+                              "NEXT(n@)"
+                              "LATER(l@)"
+                              "WAIT(w@)"
+                              "MAYBE(m@)"
+                              "|"
+                              "DONE(d@/!)"
+                              "CANCELLED(c@/!)"
+                              "ARCHIVE(a!)"
+                              )))
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+STARTUP: logdone
