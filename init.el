@@ -628,20 +628,22 @@ before packages are loaded."
   ;; (setq org-todo-keywords
   ;;       '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
   (setq org-todo-keywords '((sequence
-                              "GATHER(g@)"
-                              "NEXT(n@)"
-                              "LATER(l@)"
+                              "GATHER(g!)"
+                              "NEXT(n!)"
+                              "LATER(l!)"
                               "WAIT(w@)"
                               "MAYBE(m@)"
                               "|"
                               "DONE(d@/!)"
-                              "CANCELLED(c@/!)"
+                              "CANCELLED(c@)"
                               "ARCHIVE(a!)"
                               )))
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+STARTUP: logdone
-  (setq org-log-done 'note)
+  (setq org-log-done nil)
+  ;; (setq org-log-done 'time)
+  ;; (setq org-log-done 'note)
 
   ;; M-RET不要切割当前行
   (setq org-M-RET-may-split-line nil)
