@@ -641,7 +641,7 @@ before packages are loaded."
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+STARTUP: logdone
-  (setq org-log-done 'time)
+  (setq org-log-done 'note)
 
   ;; M-RET不要切割当前行
   (setq org-M-RET-may-split-line nil)
