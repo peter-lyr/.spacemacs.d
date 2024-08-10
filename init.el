@@ -653,7 +653,7 @@ before packages are loaded."
   (setq org-agenda-files (list "~/depei/repos/org/"))
 
   ;; 标签紧凑点
-  (setq org-tags-column 2)
+  (setq org-tags-column 0)
 
   ;; 自动补全括号
   (electric-pair-mode t)
