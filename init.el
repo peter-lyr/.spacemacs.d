@@ -684,9 +684,10 @@ before packages are loaded."
     :ensure t
     :custom
     (org-roam-directory (file-truename "~/DEPEI/Repos/org"))
-    :bind (("C-c n l" . org-roam-buffer-toggle)
-           ("C-c n f" . org-roam-node-find)
-           ("C-c n i" . org-roam-node-insert))
+    ;; 不需要，spacemacs有自己的快捷键SPC a o r l
+    ;; :bind (("C-c n l" . org-roam-buffer-toggle)
+    ;;        ("C-c n f" . org-roam-node-find)
+    ;;        ("C-c n i" . org-roam-node-insert))
     :config
     ;; If you're using a vertical completion framework, you might want a more informative completion interface
     (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
