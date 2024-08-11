@@ -680,9 +680,19 @@ before packages are loaded."
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t))); save all opened buffers
 
   ;; org-roam
-  (setq org-roam-directory (file-truename "~/DEPEI/Repos/org"))
-  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
-  (org-roam-db-autosync-mode)
+  (use-package org-roam
+    :ensure t
+    :custom
+    (org-roam-directory (file-truename "~/DEPEI/Repos/org"))
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+           ("C-c n f" . org-roam-node-find)
+           ("C-c n i" . org-roam-node-insert))
+    :config
+    ;; If you're using a vertical completion framework, you might want a more informative completion interface
+    (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+    (org-roam-db-autosync-mode)
+    ;; If using org-roam-protocol
+    (require 'org-roam-protocol))
 
   ;; 刷新当前buffer
   (defun my-refresh-cur-buffer()
