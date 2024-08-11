@@ -725,7 +725,7 @@ before packages are loaded."
   (defun my-kill-home-buffer()
     (interactive)
     ;; (kill-buffer "*spacemacs*")
-    (find-file "~/depei/repos/org/20240811210013-init.org"))
+    (find-file "~/depei/repos/org/init.org"))
   (run-at-time "1 sec" nil 'my-kill-home-buffer)
 
   )
