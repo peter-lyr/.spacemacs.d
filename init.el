@@ -691,10 +691,15 @@ before packages are loaded."
     :config
     ;; If you're using a vertical completion framework, you might want a more informative completion interface
     (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
-    (setq org-roam-capture-templates '(("d" "default" plain "%?"
-                                        ; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
-                                        :target (file+head "${slug}.org" "#+title: ${title}")
-                                        :unnarrowed t)))
+    (setq org-roam-capture-templates
+          '(("d" "default" plain "%?"
+             ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+             :target (file+head
+                      "${slug}.org"
+                      "#+title: ${title}
+#+created: %<%Y/%m/%d %H:%M:%S>"
+                      )
+             :unnarrowed t)))
 
     (org-roam-db-autosync-mode)
     ;; If using org-roam-protocol
