@@ -51,6 +51,7 @@ This function should only modify configuration layer settings."
       :variables
       org-enable-valign t
       org-enable-roam-support t
+      org-enable-roam-ui t
       ) ; 解决上删除一次再安装一次的问题
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -678,11 +679,10 @@ before packages are loaded."
   ;; (add-hook 'focus-out-hook 'save-buffer); save current buffer
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t))); save all opened buffers
 
-  (defun my-kill-home-buffer()
-    (interactive)
-    ;; (kill-buffer "*spacemacs*")
-    (find-file "~/depei/repos/org/init.org"))
-  (run-at-time "1 sec" nil 'my-kill-home-buffer)
+  ;; org-roam
+  (setq org-roam-directory (file-truename "~/DEPEI/Repos/org"))
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode)
 
   ;; 刷新当前buffer
   (defun my-refresh-cur-buffer()
@@ -701,27 +701,14 @@ before packages are loaded."
   ;; avy快速跳转
   (global-set-key (kbd "SPC j j") 'avy-goto-char)
 
+  (defun my-kill-home-buffer()
+    (interactive)
+    ;; (kill-buffer "*spacemacs*")
+    (find-file "~/depei/repos/org/20240811210013-init.org"))
+  (run-at-time "1 sec" nil 'my-kill-home-buffer)
+
   )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-  (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(package-selected-packages
-     '(org-roam emacsql yasnippet-snippets ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe valign uuidgen unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit-at-point spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline space-doc smeargle restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer orgit org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless mwim multi-line markdown-toc macrostep lsp-ui lsp-treemacs lsp-origami lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete htmlize holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-descbinds helm-company helm-comint helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-demos elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish diff-hl devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile all-the-icons ahk-mode aggressive-indent ace-link ace-jump-helm-line)))
-  (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   )
-  )
