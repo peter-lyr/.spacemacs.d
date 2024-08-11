@@ -628,16 +628,16 @@ before packages are loaded."
   ;; (setq org-todo-keywords
   ;;       '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
   (setq org-todo-keywords '((sequence
-                              "GATHER(g!)"
-                              "NEXT(n!)"
-                              "LATER(l!)"
-                              "WAIT(w@)"
-                              "MAYBE(m@)"
-                              "|"
-                              "DONE(d@/!)"
-                              "CANCELLED(c@)"
-                              "ARCHIVE(a!)"
-                              )))
+                             "GATHER(g@)"
+                             "NEXT(n@)"
+                             "LATER(l@)"
+                             "WAIT(w@)"
+                             "MAYBE(m@)"
+                             "|"
+                             "DONE(d@)"
+                             "CANCELLED(c@)"
+                             "ARCHIVE(a@)"
+                             )))
 
   ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
   ;; #+STARTUP: logdone
@@ -676,7 +676,7 @@ before packages are loaded."
 
   (defun my-kill-home-buffer()
     (interactive)
-                                        ; (kill-buffer "*spacemacs*")
+    ;; (kill-buffer "*spacemacs*")
     (find-file "~/depei/repos/org/init.org"))
   (run-at-time "1 sec" nil 'my-kill-home-buffer)
 
