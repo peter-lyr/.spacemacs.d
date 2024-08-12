@@ -723,11 +723,20 @@ before packages are loaded."
   ;; avy快速跳转
   (global-set-key (kbd "SPC j j") 'avy-goto-char)
 
-  (defun my-kill-home-buffer()
-    (interactive)
-    ;; (kill-buffer "*spacemacs*")
-    (find-file "~/depei/repos/org/init.org"))
-  (run-at-time "1 sec" nil 'my-kill-home-buffer)
+  ;; 不知为何失效了
+  ;; (defun my-kill-home-buffer()
+  ;;   (interactive)
+  ;;   ;; (kill-buffer "*spacemacs*")
+  ;;   (find-file "~/depei/repos/org/init.org"))
+  ;; (run-at-time "1 sec" nil 'my-kill-home-buffer)
+
+  ;; 在当前window打开buffer
+  (setq org-link-frame-setup
+        '((vm . vm-visit-folder-other-frame)
+          (vm-imap . vm-visit-imap-folder-other-frame)
+          (gnus . org-gnus-no-new-news)
+          (file . find-file)
+          (wl . wl-other-frame)))
 
   )
 
