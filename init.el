@@ -705,6 +705,10 @@ before packages are loaded."
     ;; If using org-roam-protocol
     (require 'org-roam-protocol))
 
+  ;; agenda默认按列展示
+  (setq org-agenda-view-columns-initially t)
+  (setq org-columns-default-format-for-agenda "%TODO %SCHEDULED %1PRIORITY %TAGS %40ITEM %CATEGORY")
+
   ;; 刷新当前buffer
   (defun my-refresh-cur-buffer()
     (interactive)
@@ -722,11 +726,11 @@ before packages are loaded."
   ;; avy快速跳转
   (global-set-key (kbd "SPC j j") 'avy-goto-char)
 
-  (defun my-kill-home-buffer()
-    (interactive)
-    ;; (kill-buffer "*spacemacs*")
-    (find-file "~/depei/repos/org/init.org"))
-  (run-at-time "1 sec" nil 'my-kill-home-buffer)
+  ;; (defun my-kill-home-buffer()
+  ;;   (interactive)
+  ;;   ;; (kill-buffer "*spacemacs*")
+  ;;   (find-file "~/depei/repos/org/init.org"))
+  ;; (run-at-time "1 sec" nil 'my-kill-home-buffer)
 
   )
 
