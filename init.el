@@ -706,6 +706,11 @@ before packages are loaded."
     ;; If using org-roam-protocol
     (require 'org-roam-protocol))
 
+  ;; agenda默认按列展示
+  (setq org-agenda-view-columns-initially t)
+  ;; https://orgmode.org/manual/Column-attributes.html
+  (setq org-columns-default-format-for-agenda "%TODO %SCHEDULED %1PRIORITY %TAGS %40ITEM %CATEGORY")
+
   ;; 刷新当前buffer
   (defun my-refresh-cur-buffer()
     (interactive)
