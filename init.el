@@ -33,6 +33,7 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      autohotkey
      ;; ----------------------------------------------------------------
@@ -86,7 +87,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-but-keep-unused))
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -717,13 +718,13 @@ before packages are loaded."
     (revert-buffer))
   (global-set-key (kbd "C-c C-r") 'my-refresh-cur-buffer)
 
-  ;; ;; DONE 表格对齐，增加上电时长
-  ;; (use-package valign
-  ;;   :ensure t
-  ;;   :config
-  ;;   (setq valign-fancy-bar t)
-  ;;   (add-hook 'org-mode-hook #'valign-mode)
-  ;;   )
+  ;; DONE 表格对齐，增加上电时长
+  (use-package valign
+    :ensure t
+    :config
+    (setq valign-fancy-bar t)
+    (add-hook 'org-mode-hook #'valign-mode)
+    )
 
   ;; avy快速跳转
   (global-set-key (kbd "SPC j j") 'avy-goto-char)
